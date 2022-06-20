@@ -41,4 +41,6 @@ const player = {
 };
 
 console.log(player);
-console.log(player.name);
+console.log(player.name); // == player["name"]
+
+player.fat = false; // 객체 자체가 const 일 뿐, 객체 내부의 값은 변경 가능
