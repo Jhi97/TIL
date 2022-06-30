@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .DiaryEditor {
   border: 1px solid gray;
   text-align: center;
@@ -28,37 +24,37 @@
   cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* List */
+
+.DiaryList {
+  border: 1px solid gray;
+  padding: 20px;
+  margin-top: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.DiaryList h2 {
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Item */
+.DiaryItem {
+  background-color: rgb(240, 240, 240);
+  margin-bottom: 10px;
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.DiaryItem .info{
+  border-bottom: 1px solid gray;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.DiaryItem .date {
+  color: gray;
+}
+
+.DiaryItem .content{
+  font-weight: bold;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
