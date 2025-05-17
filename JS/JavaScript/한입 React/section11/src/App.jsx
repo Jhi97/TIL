@@ -2,7 +2,14 @@ import './App.css';
 import Header from './components/Header';
 import Editor from './components/Editor';
 import List from './components/List';
-import { useState, useRef, useReducer, useCallback } from 'react';
+import {
+  useState,
+  useRef,
+  useReducer,
+  useCallback,
+  useMemo,
+  createContext,
+} from 'react';
 
 const mockData = [
   {
@@ -37,6 +44,11 @@ function reducer(state, action) {
       return state.filter((item) => item.id !== action.targetId);
   }
 }
+
+// export const TodoContext = createContext();
+/** 변화하는 객체, 변화하지 않는 객체 Context 분리 */
+export const TodoStateContext = createContext();
+export const TodoDispatchContext = createContext();
 
 function App() {
   // const [todos, setTodos] = useState(mockData);
@@ -106,11 +118,19 @@ function App() {
    */
   //const func = useCallback(() => {}, []);
 
+  const memoizedDispatch = useMemo(() => {
+    return { onCreate, onUpdate, onDelete };
+  }, []);
+
   return (
     <div className="App">
       <Header />
-      <Editor onCreate={onCreate} />
-      <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} />
+      <TodoStateContext.Provider value={{ todos }}>
+        <TodoDispatchContext.Provider value={memoizedDispatch}>
+          <Editor />
+          <List />
+        </TodoDispatchContext.Provider>
+      </TodoStateContext.Provider>
     </div>
   );
 }
