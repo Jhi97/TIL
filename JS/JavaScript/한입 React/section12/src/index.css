@@ -8,11 +8,12 @@ body {
   margin: 0px;
   width: 100%;
   background-color: rgb(246, 246, 246);
+  display: flex;
 }
 
 #root {
   background-color: white;
-  max-width: 400px;
+  max-width: 500px;
   width: 100%;
   margin: 0 auto;
   min-height: 100vh;
