@@ -2,8 +2,7 @@ import "./Viewer.css";
 import { getEmotionImage } from "../util/get-emotion-image.js";
 import { emotionList } from "../util/constants.js";
 
-export default function Viewer() {
-  const emotionId = 1;
+export default function Viewer({ emotionId, content }) {
   const emotionItem = emotionList.find(
     (item) => String(item.emotionId) === String(emotionId),
   );
@@ -19,7 +18,7 @@ export default function Viewer() {
       <section className="content_section">
         <h4>오늘의 일기</h4>
         <div className="content_wrapper">
-          <p> 일기 ...</p>
+          <p> {content}</p>
         </div>
       </section>
     </div>
