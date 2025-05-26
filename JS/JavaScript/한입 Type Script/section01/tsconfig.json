@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "target": "ESNext",
+    "module": "ESNext", //렌더링 되는 버전 지정
+    "outDir" : "dist", //JS 파일 보관 폴더 지정
+    "strict": false, // 타입 검사를 엄격하게 할지 말지
+    "moduleDetection": "force",
+    /* ts에서는 다른 파일이어도 동일 변수명을 사용하지 못함
+    ** 동일 스코프로 간주하기 때문에 위 moduleDetection 옵션을 켜주면 다른 스코프로 인식
+    */
+  },
+  "ts-node": {
+    "esm": true
+  },
+  "include": ["src"] //tsc 로 컴파일 할때 해당 폴더 하위의 ts 파일 전체 컴파일
+}
