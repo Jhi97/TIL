@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor // 기본 생성자 추가
@@ -22,4 +24,7 @@ public class Board {
     private String content;
 
     private String author;
+
+    @OneToMany (mappedBy = "board", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+    private List<Comment> comments;
 }
