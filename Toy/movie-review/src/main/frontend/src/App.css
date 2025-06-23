@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+  background-color: #141414;
+  color: white;
+  min-height: 100vh;
+}
+
+.App-header {
+  padding: 2rem;
+  background-color: #202020;
+}
+
+.header-link {
+  text-decoration: none;
+  color: white;
+}
