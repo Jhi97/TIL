@@ -1,13 +1,10 @@
 package hello.seccore.order;
 
 import hello.seccore.discount.DiscountPolicy;
-import hello.seccore.discount.FixDiscountPolicy;
-import hello.seccore.discount.RateDiscountPolicy;
 import hello.seccore.member.Member;
 import hello.seccore.member.MemberRepository;
-import hello.seccore.member.MemberService;
-import hello.seccore.member.MemberServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -16,8 +13,7 @@ public class OrderServiceImpl implements OrderService{
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-    @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, @Qualifier("mainDiscountPolicy") DiscountPolicy discountPolicy) {
         this.discountPolicy = discountPolicy;
         this.memberRepository = memberRepository;
     }
