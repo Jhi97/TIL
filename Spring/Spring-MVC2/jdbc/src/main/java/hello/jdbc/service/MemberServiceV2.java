@@ -1,7 +1,6 @@
 package hello.jdbc.service;
 
 import hello.jdbc.domain.Member;
-import hello.jdbc.repository.MemberRepositoryV1;
 import hello.jdbc.repository.MemberRepositoryV2;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -36,6 +35,7 @@ public class MemberServiceV2 {
         Member toMember = repository.findById(con, toId);
 
         repository.update(con, fromId, fromMember.getMoney()-money);
+        validation(toMember);
         repository.update(con, toId, toMember.getMoney()+money);
 
     }
