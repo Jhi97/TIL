@@ -3,6 +3,7 @@ package stream.basic;
 import lambda.lambda5.mysteam.MyStream3;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 public class LazyEvalMain3 {
     static void main() {
