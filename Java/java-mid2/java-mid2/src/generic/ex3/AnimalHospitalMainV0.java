@@ -23,7 +23,9 @@ public class AnimalHospitalMainV0 {
         //문제 1 : 개 병원에 고양이 전달
         //dogHospital.set(cat); - 컴파일 오류
 
-        // 
-
+        //문제 2 : 개 타입 반환
+        dogHospital.set(dog);
+        Dog biggerDog = dogHospital.bigger(new Dog("멍멍2", 200));
+        System.out.println("biggerDog = " + biggerDog);
     }
 }
