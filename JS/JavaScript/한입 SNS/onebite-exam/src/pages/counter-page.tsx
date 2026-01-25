@@ -1,5 +1,5 @@
-import Controller from "@/counter/controller";
-import Viewer from "@/counter/viewer";
+import Controller from "@/components/counter/controller";
+import Viewer from "@/components/counter/viewer";
 
 export default function CounterPage() {
   return (

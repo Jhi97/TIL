@@ -1,0 +1,26 @@
+{
+  "todos": [
+    {
+      "id": "1",
+      "content": "Todo 1",
+      "idDone": true
+    },
+    {
+      "id": "005e",
+      "content": "123",
+      "isDone": false
+    }
+  ],
+  "주석": [
+    {
+      "title": "json-server 설치 명령어",
+      "content": "npm i json-server -D",
+      "id": "9a97"
+    },
+    {
+      "title": "json-server 실행 명령어",
+      "content": "npx json-server server/db.json",
+      "id": "ab21"
+    }
+  ]
+}
