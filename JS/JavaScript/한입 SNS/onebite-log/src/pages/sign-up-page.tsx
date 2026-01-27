@@ -2,14 +2,22 @@ import { Input } from "@/components/ui/input.tsx";
 import { Button } from "@/components/ui/button.tsx";
 import { Link } from "react-router";
 import { useState } from "react";
+import { useSignUp } from "@/hooks/use-sign-up.ts";
 
 export default function SignUpPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const { mutate: signUp } = useSignUp();
+
   const handleSignUpClick = () => {
     if (email.trim() === "") return;
     if (password.trim() === "") return;
+    console.log("click");
+    signUp({
+      email,
+      password,
+    });
   };
 
   return (
@@ -32,7 +40,9 @@ export default function SignUpPage() {
         />
       </div>
       <div>
-        <Button className="w-full">회원가입</Button>
+        <Button className="w-full" onClick={handleSignUpClick}>
+          회원가입
+        </Button>
       </div>
       <div>
         <Link className="text-muted-foreground hover:underline" to={"/sign-in"}>
